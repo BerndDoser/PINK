@@ -1,4 +1,5 @@
 add_subdirectory(ImageProcessingTest)
+add_subdirectory(OpenCVTest)
 add_subdirectory(SelfOrganizingMapTest)
 add_subdirectory(UtilitiesTest)
 
