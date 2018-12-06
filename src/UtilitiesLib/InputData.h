@@ -1,5 +1,5 @@
 /**
- * @file   InputData.h
+ * @file   UtilitiesLib/InputData.h
  * @date   Nov 3, 2014
  * @author Bernd Doser, HITS gGmbH
  */
@@ -25,19 +25,19 @@ namespace pink {
 
 struct InputData
 {
-    //! Default constructor.
+    /// Default constructor.
     InputData();
 
-    //! Constructor reading input data from arguments.
+    /// Constructor reading input data from arguments.
     InputData(int argc, char **argv);
 
-    //! Print program header.
+    /// Print program header.
     void print_header() const;
 
-    //! Print input data.
+    /// Print input data.
     void print_parameters() const;
 
-    //! Print usage output for input arguments.
+    /// Print usage output for input arguments.
     void print_usage() const;
 
     std::string imagesFilename;
@@ -45,17 +45,31 @@ struct InputData
     std::string somFilename;
     std::string rot_flip_filename;
 
-    bool verbose;
-    uint32_t som_width;
-    uint32_t som_height;
-    uint32_t som_depth;
-    uint32_t neuron_dim;
+    /// SOM layout
     Layout layout;
+
+    /// List of SOM dimensions in each direction
+    std::vector<uint32_t> som_dimensions;
+
+    /// Number of neurons
+    uint32_t som_size;
+
+    /// List of neuron dimensions in each direction
+    std::vector<uint32_t> neuron_dimensions;
+
+    /// Be more talkative
+    bool verbose;
+
+    /// Random number seed
     int seed;
-    int numberOfRotations;
-    int numberOfThreads;
+
+    uint32_t number_of_rotations;
+
+    uint32_t number_of_threads;
+
     SOMInitialization init;
-    int numIter;
+    uint32_t number_of_iterations;
+
     float progressFactor;
     bool use_flip;
     bool use_gpu;
@@ -63,10 +77,8 @@ struct InputData
     uint32_t number_of_channels;
     uint32_t image_dim;
     int image_size;
-    int som_size;
     int neuron_size;
     int som_total_size;
-    int numberOfRotationsAndFlip;
     Interpolation interpolation;
     ExecutionPath executionPath;
     IntermediateStorageType intermediate_storage;

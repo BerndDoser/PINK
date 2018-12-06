@@ -1,11 +1,11 @@
 /**
- * @file   InputData.cpp
+ * @file   UtilitiesLib/InputData.cpp
  * @date   Nov 3, 2014
  * @author Bernd Doser, HITS gGmbH
  */
 
+#include <clara.hpp>
 #include <cmath>
-#include <getopt.h>
 #include <iostream>
 #include <omp.h>
 #include <string.h>
@@ -61,6 +61,27 @@ InputData::InputData()
 InputData::InputData(int argc, char **argv)
  : InputData()
 {
+    bool show_help = false;
+    auto cli = clara::Help(show_help)
+             | clara::Opt(settings_file, "settings")["-s"]["--settings"]("Settings file (default: benchmark.json)")
+             | clara::Opt(duration_digits, "duration_digits")["-a"]["--duration_digits"]("Number of digits of time duration (default: 3)")
+             | clara::Opt(write_diff)["-d"]["--diff"]("Write difference matrix (default: off)")
+			 | clara::Arg(data_file, "data-file")("Input file with data for training").required();
+
+    auto cli_result = cli.parse(clara::Args(argc, argv));
+    if (!cli_result)
+    {
+        std::cerr << cli << std::endl;
+        std::cerr << "Error in command line: " << cli_result.errorMessage() << std::endl;
+        return 1;
+    }
+
+    if (show_help)
+    {
+        std::cerr << cli << std::endl;
+        return 0;
+    }
+
     static struct option long_options[] = {
         {"neuron-dimension",    1, 0, 'd'},
         {"layout",              1, 0, 'l'},
@@ -491,6 +512,11 @@ void InputData::print_usage() const
                  "    --max-update-distance <float>   Maximum distance for SOM update (default = off).\n"
                  "    --version, -v                   Print version number.\n"
                  "    --verbose                       Print more output.\n"
+                 "\n"
+                 "  SOM layout:\n"
+                 "\n"
+                 "    cartesian <int> [int] [int] ...     At least one dimension must be defined\n"
+    		     "    hexagonal <int>\n"
                  "\n"
                  "  Distribution function:\n"
                  "\n"

@@ -14,6 +14,7 @@ class RecordConan(ConanFile):
     
     settings = "os", "compiler", "build_type", "arch"
     requires = \
+        "clara/1.1.5@bincrafters/stable", \
         "gtest/1.8.1@bincrafters/stable", \
         "pybind11/2.2.2@conan/stable"
     generators = "cmake"
