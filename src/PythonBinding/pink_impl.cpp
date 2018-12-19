@@ -8,11 +8,13 @@
 #include <pybind11/numpy.h>
 #include <pybind11/pybind11.h>
 
-#include "../UtilitiesLib/Interpolation.h"
+#include "SelfOrganizingMapLib/CartesianLayout.h"
+#include "SelfOrganizingMapLib/Data.h"
+#include "SelfOrganizingMapLib/HexagonalLayout.h"
 #include "SelfOrganizingMapLib/Mapper_generic.h"
 #include "SelfOrganizingMapLib/Trainer_generic.h"
-#include "SelfOrganizingMapLib/Data.h"
 #include "SelfOrganizingMapLib/SOM.h"
+#include "UtilitiesLib/Interpolation.h"
 #include "UtilitiesLib/Version.h"
 
 namespace py = pybind11;
@@ -69,6 +71,42 @@ PYBIND11_MODULE(pink, m)
             return new SOM<CartesianLayout<2>, CartesianLayout<2>, float>({dim0, dim1}, {dim2, dim3}, std::vector<float>(p, p + dim0 * dim1 * dim2 * dim3));
         }))
         .def_buffer([](SOM<CartesianLayout<2>, CartesianLayout<2>, float> &m) -> py::buffer_info {
+
+             auto&& som_dimension = m.get_som_dimension();
+             auto&& neuron_dimension = m.get_neuron_dimension();
+
+             return py::buffer_info(
+                 m.get_data_pointer(),                   /* Pointer to buffer */
+                 sizeof(float),                          /* Size of one scalar */
+                 py::format_descriptor<float>::format(), /* Python struct-style format descriptor */
+                 4,                                      /* Number of dimensions */
+                 { som_dimension[0],
+                   som_dimension[1],
+                   neuron_dimension[0],
+                   neuron_dimension[1]},                 /* Buffer dimensions */
+                 { sizeof(float) * neuron_dimension[1] * neuron_dimension[0] * som_dimension[1],
+                   sizeof(float) * neuron_dimension[1] * neuron_dimension[0],
+                   sizeof(float) * neuron_dimension[1],
+                   sizeof(float) }                       /* Strides (in bytes) for each index */
+             );
+         });
+
+    py::class_<SOM<HexagonalLayout, CartesianLayout<2>, float>>(m, "som_hex", py::buffer_protocol())
+        .def(py::init())
+        .def(py::init([](py::buffer b)
+        {
+            py::buffer_info info = b.request();
+
+            if (info.ndim != 4) throw std::runtime_error("Incompatible buffer dimension!");
+
+            auto&& p = static_cast<float*>(info.ptr);
+            auto&& dim0 = static_cast<uint32_t>(info.shape[0]);
+            auto&& dim1 = static_cast<uint32_t>(info.shape[1]);
+            auto&& dim2 = static_cast<uint32_t>(info.shape[2]);
+            auto&& dim3 = static_cast<uint32_t>(info.shape[3]);
+            return new SOM<HexagonalLayout, CartesianLayout<2>, float>({dim0, dim1}, {dim2, dim3}, std::vector<float>(p, p + dim0 * dim1 * dim2 * dim3));
+        }))
+        .def_buffer([](SOM<HexagonalLayout, CartesianLayout<2>, float> &m) -> py::buffer_info {
 
              auto&& som_dimension = m.get_som_dimension();
              auto&& neuron_dimension = m.get_neuron_dimension();
