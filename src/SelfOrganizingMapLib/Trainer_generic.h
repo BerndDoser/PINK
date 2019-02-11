@@ -191,7 +191,8 @@ public:
        d_spatial_transformed_images(this->number_of_spatial_transformations * som.get_neuron_size()),
        d_euclidean_distance_matrix(som.get_number_of_neurons()),
        d_best_rotation_matrix(som.get_number_of_neurons()),
-       d_best_match(1)
+       d_best_match(1),
+       d_first_step(som.get_number_of_neurons() * this->number_of_spatial_transformations)
     {
         if (number_of_rotations >= 4) {
             std::vector<float> cos_alpha(number_of_rotations - 1);
@@ -234,7 +235,7 @@ public:
 
         generate_euclidean_distance_matrix(d_euclidean_distance_matrix, d_best_rotation_matrix,
             this->som.get_number_of_neurons(), neuron_size, d_som, this->number_of_spatial_transformations,
-            d_spatial_transformed_images, block_size, euclidean_distance_type);
+            d_spatial_transformed_images, block_size, euclidean_distance_type, d_first_step);
 
 #ifdef PRINT_DEBUG
         std::cout << "euclidean_distance_matrix" << std::endl;
@@ -278,9 +279,13 @@ private:
     thrust::device_vector<uint32_t> d_best_rotation_matrix;
     thrust::device_vector<uint32_t> d_best_match;
 
+    /// Per-calculated values to speed-up
     thrust::device_vector<float> d_cos_alpha;
     thrust::device_vector<float> d_sin_alpha;
     thrust::device_vector<float> d_update_factors;
+
+    /// Device memory of the first part of euclidean distance calculation
+    thrust::device_vector<T> d_first_step;
 };
 
 #endif
