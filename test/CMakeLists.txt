@@ -1,5 +1,6 @@
 add_subdirectory(ImageProcessingTest)
 add_subdirectory(SelfOrganizingMapTest)
+add_subdirectory(PinkTest)
 add_subdirectory(UtilitiesTest)
 
 if(CUDA_FOUND)
