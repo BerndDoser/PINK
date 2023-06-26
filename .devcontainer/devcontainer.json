@@ -16,6 +16,7 @@
 		"vscode": {
 			"extensions": [
 				"github.vscode-github-actions",
+				"ms-python.python",
 				"ms-vscode.cpptools-extension-pack",
 			]
 		}
