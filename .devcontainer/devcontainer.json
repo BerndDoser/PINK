@@ -15,7 +15,8 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"ms-vscode.cpptools-extension-pack"
+				"github.vscode-github-actions",
+				"ms-vscode.cpptools-extension-pack",
 			]
 		}
 	}
