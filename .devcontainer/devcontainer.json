@@ -17,8 +17,13 @@
 			"extensions": [
 				"github.vscode-github-actions",
 				"ms-python.python",
+				"ms-toolsai.jupyter",
 				"ms-vscode.cpptools-extension-pack",
+				"tamasfe.even-better-toml"
 			]
 		}
-	}
+	},
+	"mounts": [
+        "source=${localEnv:HOME}/data/machine-learning,target=/data,type=bind,consistency=cached"
+    ]
 }
