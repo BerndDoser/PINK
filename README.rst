@@ -33,7 +33,7 @@ We provide deb- and rpm-packages at https://github.com/HITS-AIN/PINK/releases
 
 or you can install PINK from the sources:
 
-.. code-block:: bash
+.. code:: sh
    cmake -DCMAKE_INSTALL_PREFIX=<INSTALL_PATH> .
    make install
 
@@ -43,7 +43,7 @@ PyPI installation
 
 PINK is also available as `PyPi package <https://pypi.org/project/astro-pink/>`_ which can be installed by
 
-.. code-block:: bash
+.. code:: sh
    pip install astro-pink
 
 
@@ -58,7 +58,7 @@ Usage
 
 To train a the `self-organizing map <https://en.wikipedia.org/wiki/Self-organizing_map>`_ (SOM) please execute
 
-.. code-block:: bash
+.. code:: sh
    Pink --train <image-file> <result-file>
 
 where `image-file` is the input file of images for the training and `result-file` is the output file for the trained SOM.
@@ -66,7 +66,7 @@ All files are in binary mode described `here <https://github.com/HITS-AIN/PINK/w
 
 To map an image to the trained SOM please execute
 
-.. code-block:: bash
+.. code:: sh
    Pink --map <image-file> <result-file> <SOM-file>
 
 where `image-file` is the input file of images for the mapping, `SOM-file` is the input file for the trained SOM,
@@ -80,11 +80,11 @@ Python scripts
 
 For conversion and visualization of images and SOM some python scripts are available.
 
-* convert_data_binary_file.py     Convert binary data file from PINK version 1 to 2
-* show_heatmap.py:                Visualize the mapping result
-* show_images.py:                 Visualize binary images file format
-* show_som.py:                    Visualize binary SOM file format
-* train.py:                       SOM training using the PINK Python interface
+* ``convert_data_binary_file.py``:     Convert binary data file from PINK version 1 to 2
+* ``show_heatmap.py``:                Visualize the mapping result
+* ``show_images.py``:                 Visualize binary images file format
+* ``show_som.py``:                    Visualize binary SOM file format
+* ``train.py``:                       SOM training using the PINK Python interface
 
 
 Publication
