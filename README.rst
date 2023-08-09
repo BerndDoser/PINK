@@ -34,6 +34,7 @@ We provide deb- and rpm-packages at https://github.com/HITS-AIN/PINK/releases
 or you can install PINK from the sources:
 
 .. code:: sh
+
    cmake -DCMAKE_INSTALL_PREFIX=<INSTALL_PATH> .
    make install
 
@@ -44,6 +45,7 @@ PyPI installation
 PINK is also available as `PyPi package <https://pypi.org/project/astro-pink/>`_ which can be installed by
 
 .. code:: sh
+
    pip install astro-pink
 
 
@@ -59,6 +61,7 @@ Usage
 To train a the `self-organizing map <https://en.wikipedia.org/wiki/Self-organizing_map>`_ (SOM) please execute
 
 .. code:: sh
+
    Pink --train <image-file> <result-file>
 
 where `image-file` is the input file of images for the training and `result-file` is the output file for the trained SOM.
@@ -67,6 +70,7 @@ All files are in binary mode described `here <https://github.com/HITS-AIN/PINK/w
 To map an image to the trained SOM please execute
 
 .. code:: sh
+
    Pink --map <image-file> <result-file> <SOM-file>
 
 where `image-file` is the input file of images for the mapping, `SOM-file` is the input file for the trained SOM,
