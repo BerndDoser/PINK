@@ -14,11 +14,13 @@ Requirements
 ------------
 
 * C++ with ISO 17 standard
-* [CMake](https://cmake.org/) >= 3.18
+* `CMake <https://cmake.org/>`_ >= 3.18
 * CUDA >= 9.1 (highly recommended)
-* [conan.io](https://conan.io/) (optional for C++ dependencies) or
-  * [PyBind11](https://github.com/pybind/pybind11) (optional for Python interface)
-  * [google-test](https://github.com/google/googletest) 1.8.1 (optional for unit tests)
+* `conan.io <https://conan.io/>`_ (optional for C++ dependencies) or
+
+  * `PyBind11 <https://github.com/pybind/pybind11>`_ (optional for Python interface)
+  * `google-test <https://github.com/google/googletest>`_ 1.8.1 (optional for unit tests)
+
 * doxygen 1.8.13 (optional for developer documentation)
 
 Conan.io will install automatically the C++ dependencies (PyBind11 and google-test). Otherwise you can also install these libraries yourself.
@@ -108,7 +110,7 @@ Distributed under the GNU GPLv3 License. See accompanying file LICENSE or copy a
 .. |Gitter| image:: https://badges.gitter.im/HITS-AIN-PINK/Lobby.svg
    :target: https://gitter.im/HITS-AIN-PINK/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
 .. |PyPi| image:: https://img.shields.io/pypi/v/astro-pink.svg
-   :target: https://astro-pink.github.io/releases
+   :target: https://github.com/HITS-AIN/PINK/releases
 .. |Colab| image:: https://colab.research.google.com/assets/colab-badge.svg
    :target: https://colab.research.google.com/github/BerndDoser/PINK/blob/pypi/colab/pink-train-demo.ipynb
 .. |ASCL| image:: https://img.shields.io/badge/ascl-1910.001-blue.svg?colorB=262255
