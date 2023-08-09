@@ -5,7 +5,7 @@ Parallelized rotation and flipping INvariant Kohonen maps (PINK)
 
 |Build-Status| |ASCL| |Gitter| |Colab|
 
-.. image:: doxygen/galaxies_som_hex.jpg
+.. image:: https://github.com/HITS-AIN/PINK/blob/master/doxygen/galaxies_som_hex.jpg
    :width: 400
    :alt: Self-organizing map of radio-synthesis data taken from the Radio Galaxy Zoo project
 
@@ -13,13 +13,13 @@ Parallelized rotation and flipping INvariant Kohonen maps (PINK)
 Requirements
 ------------
 
-  * C++ with ISO 17 standard
-  * [CMake](https://cmake.org/) >= 3.18
-  * CUDA >= 9.1 (highly recommended)
-  * [conan.io](https://conan.io/) (optional for C++ dependencies) or
-    * [PyBind11](https://github.com/pybind/pybind11) (optional for Python interface)
-    * [google-test](https://github.com/google/googletest) 1.8.1 (optional for unit tests)
-  * doxygen 1.8.13 (optional for developer documentation)
+* C++ with ISO 17 standard
+* [CMake](https://cmake.org/) >= 3.18
+* CUDA >= 9.1 (highly recommended)
+* [conan.io](https://conan.io/) (optional for C++ dependencies) or
+  * [PyBind11](https://github.com/pybind/pybind11) (optional for Python interface)
+  * [google-test](https://github.com/google/googletest) 1.8.1 (optional for unit tests)
+* doxygen 1.8.13 (optional for developer documentation)
 
 Conan.io will install automatically the C++ dependencies (PyBind11 and google-test). Otherwise you can also install these libraries yourself.
 
@@ -101,14 +101,14 @@ License
 Distributed under the GNU GPLv3 License. See accompanying file LICENSE or copy at http://www.gnu.org/licenses/gpl-3.0.html.
 
 
-.. |Py-Versions| image:: https://img.shields.io/pypi/pyversions/astro-pink.svg?logo=python&logoColor=white
+.. |Py-Versions| image:: https://img.shields.io/pypi/pyversions/astro-pink.svg?logo=python
    :target: https://pypi.org/project/astro-pink
 .. |Build-Status| image:: https://jenkins.h-its.org/buildStatus/icon?job=AIN/GitHub%20HITS-AIN/PINK/master
    :target: https://jenkins.h-its.org/job/AIN/job/GitHub%20HITS-AIN/job/PINK/job/master/
 .. |Gitter| image:: https://badges.gitter.im/HITS-AIN-PINK/Lobby.svg
    :target: https://gitter.im/HITS-AIN-PINK/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
-.. |PyPi| image:: https://badge.fury.io/py/astro-pink.svg
-   :target: https://badge.fury.io/py/astro-pink
+.. |PyPi| image:: https://img.shields.io/pypi/v/astro-pink.svg
+   :target: https://astro-pink.github.io/releases
 .. |Colab| image:: https://colab.research.google.com/assets/colab-badge.svg
    :target: https://colab.research.google.com/github/BerndDoser/PINK/blob/pypi/colab/pink-train-demo.ipynb
 .. |ASCL| image:: https://img.shields.io/badge/ascl-1910.001-blue.svg?colorB=262255
