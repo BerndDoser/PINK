@@ -116,7 +116,7 @@ Distributed under the GNU GPLv3 License. See accompanying file LICENSE or copy a
 .. |PyPi| image:: https://img.shields.io/pypi/v/astro-pink.svg
    :target: https://github.com/HITS-AIN/PINK/releases
 .. |Colab| image:: https://colab.research.google.com/assets/colab-badge.svg
-   :target: https://colab.research.google.com/github/BerndDoser/PINK/blob/pypi/colab/pink-train-demo.ipynb
+   :target: https://colab.research.google.com/github/HITS-AIN/PINK/blob/master/colab/pink-train-demo.ipynb
 .. |ASCL| image:: https://img.shields.io/badge/ascl-1910.001-blue.svg?colorB=262255
    :target: http://ascl.net/1910.001
 .. |LICENCE| image:: https://img.shields.io/badge/license-GPLv3-blue.svg
