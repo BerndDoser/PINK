@@ -15,7 +15,7 @@ authors = [
   { name="Bernd Doser", email="bernd.doser@h-its.org" },
 ]
 description = "Parallelized rotation and flipping INvariant Kohonen maps"
-readme = "README.md"
+readme = "README.rst"
 license = {text = "GPL-3.0"}
 requires-python = ">=3.8"
 classifiers = [
@@ -34,7 +34,7 @@ classifiers = [
 sdist.include = [
     "CMakeLists.txt",
     "LICENSE",
-    "README.md",
+    "README.rst",
     "pyproject.toml",
     "src",
     "python/pink/*.py",
