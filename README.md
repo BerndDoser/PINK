@@ -1,11 +1,7 @@
-[![Build Status](https://jenkins.h-its.org/buildStatus/icon?job=AIN/GitHub%20HITS-AIN/PINK/master)](https://jenkins.h-its.org/job/AIN/job/GitHub%20HITS-AIN/job/PINK/job/master/)
-[![Join the chat at https://gitter.im/HITS-AIN-PINK/Lobby](https://badges.gitter.im/HITS-AIN-PINK/Lobby.svg)](https://gitter.im/HITS-AIN-PINK/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-<a href="http://ascl.net/1910.001"><img src="https://img.shields.io/badge/ascl-1910.001-blue.svg?colorB=262255" alt="ascl:1910.001" /></a>
-[![PyPI version](https://badge.fury.io/py/astro-pink.svg)](https://badge.fury.io/py/astro-pink)
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/BerndDoser/PINK/blob/pypi/colab/pink-train-demo.ipynb)
-
-
 # Parallelized rotation and flipping INvariant Kohonen maps (PINK)
+
+|Py-Versions| |PyPi| |LICENCE|
+|Build-Status| |ASCL| |Gitter| |Colab|
 
 ![SOM of radio-synthesis data taken from the Radio Galaxy Zoo](doxygen/galaxies_som_hex.jpg)
 
@@ -86,3 +82,17 @@ For conversion and visualization of images and SOM some python scripts are avail
 ## License
 
 Distributed under the GNU GPLv3 License. See accompanying file LICENSE or copy at http://www.gnu.org/licenses/gpl-3.0.html.
+
+
+.. |Py-Versions| image:: https://img.shields.io/pypi/pyversions/astro-pink.svg?logo=python&logoColor=white
+   :target: https://pypi.org/project/astro-pink
+.. |Build-Status| image:: https://jenkins.h-its.org/buildStatus/icon?job=AIN/GitHub%20HITS-AIN/PINK/master
+   :target: https://jenkins.h-its.org/job/AIN/job/GitHub%20HITS-AIN/job/PINK/job/master/
+.. |Gitter| image:: https://badges.gitter.im/HITS-AIN-PINK/Lobby.svg
+   :target: https://gitter.im/HITS-AIN-PINK/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
+.. |PyPi| image:: https://badge.fury.io/py/astro-pink.svg
+   :target: https://badge.fury.io/py/astro-pink
+.. |Colab| image:: https://colab.research.google.com/assets/colab-badge.svg
+   :target: https://colab.research.google.com/github/BerndDoser/PINK/blob/pypi/colab/pink-train-demo.ipynb
+.. |ASCL| image:: https://img.shields.io/badge/ascl-1910.001-blue.svg?colorB=262255
+   :target: http://ascl.net/1910.001
