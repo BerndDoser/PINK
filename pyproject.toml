@@ -1,10 +1,10 @@
 [build-system]
 requires = [
-    "cmake>=3.15",
-    "conan==1.*",
-    "ninja",
-    "pybind11",
-    "scikit-build-core[pyproject]",
+        "cmake>=3.15",
+        "conan==1.*",
+        "ninja",
+        "pybind11",
+        "scikit-build-core[pyproject]",
 ]
 build-backend = "scikit_build_core.build"
 
@@ -12,12 +12,15 @@ build-backend = "scikit_build_core.build"
 name = "astro-pink"
 version = "2.5"
 authors = [
-  { name="Bernd Doser", email="bernd.doser@h-its.org" },
+    { name="Bernd Doser", email="bernd.doser@h-its.org" },
 ]
 description = "Parallelized rotation and flipping INvariant Kohonen maps"
 readme = "README.rst"
 license = {text = "GPL-3.0"}
 requires-python = ">=3.8"
+dependencies = [
+    "matplotlib"
+]
 classifiers = [
     'Development Status :: 5 - Production/Stable',
     'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
