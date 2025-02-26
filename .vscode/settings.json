@@ -4,6 +4,7 @@
     },
     "cmake.generator": "Ninja",
     "files.associations": {
-        "*.cuh": "cpp"
+        "*.cuh": "cpp",
+        "cstddef": "cpp"
     },
 }
