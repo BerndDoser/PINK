@@ -1,5 +1,7 @@
+_skbuild/
 .conan/
 .ipynb_checkpoints/
+.venv/
 *__pycache__
 *.egg-info/
 /.cproject
@@ -14,4 +16,3 @@
 /src/UtilitiesLib/Version.h
 /test-man
 jupyter/.env
-_skbuild/
